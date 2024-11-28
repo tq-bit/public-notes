@@ -4,8 +4,6 @@ description: The heap, the stack and how they work
 public: true
 ---
 
-# Memory Management
-Extends [[_Computer Science]]
 
 ## The Stack and the Heap
 Both, the stack and the heap are parts of memory available to code at runtime. Each of them is structured in a particular way
@@ -29,11 +27,11 @@ The heap is memory set aside for dynamic allocation. It is assembled after no gi
 > Data on the heap can be accessed in any given order and independently of running processes. It is in turn less efficient to use and takes more time to access.
 
 **Heap pointers**
-Pointers are like adresses of locations in the heap. Each pointer 'points' to a space that holds allocated data. 
+Pointers are like adresses of locations in the heap. Each pointer 'points' to a space that holds allocated data.
 
 
 ## Function Calls on the Heap
-Let's take Node.js as an example. When a Javascript file is executed, a new process is spawned. This process creates an event loop, which continously checks if there are functions that must be run and executes them in order. 
+Let's take Node.js as an example. When a Javascript file is executed, a new process is spawned. This process creates an event loop, which continously checks if there are functions that must be run and executes them in order.
 
 The following code will be moved in the stack - and run - like so:
 
@@ -41,17 +39,17 @@ The following code will be moved in the stack - and run - like so:
 function logOne() {
 	console.log('one');
 }
-  
+
 function logTwo() {
 	console.log('two');
 }
-  
+
 function logBoth() {
 	console.log('go')
 	logOne();
 	logTwo();
 }
-  
+
 logBoth();
 ```
 
