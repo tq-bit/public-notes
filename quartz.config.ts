@@ -8,8 +8,8 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
-    pageTitleSuffix: "",
+    pageTitle: "My QBits",
+    pageTitleSuffix: " | Qbits",
     enableSPA: true,
     enablePopovers: true,
     analytics: null,
@@ -22,9 +22,9 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono",
+        header: "Montserrat",
+        body: "Open Sans",
+        code: "Consolas",
       },
       colors: {
         lightMode: {
@@ -60,8 +60,8 @@ const config: QuartzConfig = {
       }),
       Plugin.SyntaxHighlighting({
         theme: {
-          light: "github-light",
-          dark: "github-dark",
+          light: "github-light-high-contrast",
+          dark: "material-theme-palenight",
         },
         keepBackground: false,
       }),
