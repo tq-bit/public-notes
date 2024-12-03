@@ -11,8 +11,8 @@ Volumes and bind mounts are used to persist data. While volume paths are handled
 
 ```bash
 # Start a container with a named volume
-docker run -p 80:80 --rm -d --name <container-name> \\ 
-  -v <volume-name>:<container-fs-path> \\ 
+docker run -p 80:80 --rm -d --name <container-name> \\
+  -v <volume-name>:<container-fs-path> \\
   <image-name>
 
 # Manually create a volume
@@ -39,15 +39,15 @@ In this case, instead of using a volume name, bind mounts use a file path on the
 
 ```bash
 # Start a container with a bind mount
-docker run -p 80:80 --rm -d --name <container-name> \\ 
-  -v <localhost-fs-path>:<container-fs-path> \\ 
+docker run -p 80:80 --rm -d --name <container-name> \\
+  -v <localhost-fs-path>:<container-fs-path> \\
   <image-name>
 ```
 
 ## Permission problems while using docker compose
 When running into #unix-permission problems while using bind mounts, try and assign a user to the current compose file
 
-Example for node-red (problems when using bind mount for /data): 
+Example for node-red (problems when using bind mount for /data):
 
 ```yml
 services:
