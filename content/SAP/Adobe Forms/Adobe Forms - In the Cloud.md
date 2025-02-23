@@ -1,10 +1,19 @@
 ---
 description: Descriptions on how to work with Adobe Forms - Public Cloud Systems
 public: true
-published: true
+published: false
 ---
 > Erweiterung von [[Adobe Forms - On Premise]]
 > Vieles, was On Premise gilt, gilt auch in der Cloud
+
+## MVPs
+
+### Print XML
+> Download as file, no copy paste into a new file
+
+```
+#&&DOWNLOAD_FORM_DATA_XML&&#
+```
 
 ## Unterschiede zu On-Premise
 - Datenbereitstellung über OData
@@ -18,13 +27,16 @@ published: true
 
 ## Relevante Apps
 
-| App                                                | Beschreibung                        |
-| -------------------------------------------------- | ----------------------------------- |
-| Formularvorlagen Pflegen                           | Einstieg in die Formularbearbeitung |
-| Implementierungsaktivitäten (Manage your solution) | Pflege von Formular zu Workflow     |
-| Logos Verwalten                                    | Upload von Logos                    |
-| Texte Verwalten                                    | Pflege von Textbausteinen           |
-| Softwarekollektion Exportieren                     | Transport von Adobe Forms           |
+| App                                                | Beschreibung                                                           |
+| -------------------------------------------------- | ---------------------------------------------------------------------- |
+| Formularvorlagen Pflegen (Manage Form Templates)   | Einstieg in die Formularbearbeitung                                    |
+| Implementierungsaktivitäten (Manage your solution) | Pflege von Formular zu Workflow                                        |
+| Logos Verwalten                                    | Upload von Logos                                                       |
+| Texte Verwalten                                    | Pflege von Textbausteinen                                              |
+| Softwarekollektion Exportieren                     | Transport von Adobe Forms                                              |
+| Bestellungen verwalten, Advanced (ME23N)           | Ausgabe von Bestellungen                                               |
+| Custom Logic (Eigene Logik)                        | Pflege von [[BAdi Code für zusätzliche Felder\|Logik für neue Felder]] |
+| Custom Fields (Eigene Felder)                      | Pflege von eigenen Formularfeldern                                     |
 
 ## Workflow
 1. Kopie eines Standardformulars
@@ -58,7 +70,7 @@ z.B. Ansprechpartner auf Formular
 - Falls es das Implementierungspaket bereits gibt muss es angepasst werden und nicht neu erstellt
 - In diesem Implementierungspaket wird nun die Logik geschrieben, um einen Wert aus den CDS Views zu lesen, der dem Wert entspricht, der später angedruckt werden soll
 ## Sonstiges & Tips
-- Daten von Formularen kann man sich besorgen über, z.B.
+- Daten von Formularen kann man sich im jeweiligen Ausgabeformat besorgen
   `Kundenauftrag öffnen -> Ausgabeposition -> Druckwarteschlange`
-  `#&&DOWNLOAD_FORM_DATA_XML&&#
+  `#&&DOWNLOAD_FORM_DATA_XML&&#`
 - Felder können durch Teilformulare einfach erweitert werden ,z.B. für Tabellen
