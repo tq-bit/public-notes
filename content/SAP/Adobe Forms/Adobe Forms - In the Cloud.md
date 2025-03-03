@@ -9,7 +9,7 @@ published: false
 ## MVPs
 
 ### Print XML
-> Download as file, no copy paste into a new file
+> Download als Datei, einfügen in neue Datei funktioniert nicht korrekt
 
 ```
 #&&DOWNLOAD_FORM_DATA_XML&&#
@@ -35,7 +35,7 @@ published: false
 | Texte Verwalten                                    | Pflege von Textbausteinen                                              |
 | Softwarekollektion Exportieren                     | Transport von Adobe Forms                                              |
 | Bestellungen verwalten, Advanced (ME23N)           | Ausgabe von Bestellungen                                               |
-| Custom Logic (Eigene Logik)                        | Pflege von [[BAdi Code für zusätzliche Felder\|Logik für neue Felder]] |
+| Custom Logic (Eigene Logik)                        | Pflege von [[Auslesen von eigener Kundennummer bei Lieferant\|Logik für neue Felder]] |
 | Custom Fields (Eigene Felder)                      | Pflege von eigenen Formularfeldern                                     |
 
 ## Workflow
