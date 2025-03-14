@@ -1,7 +1,7 @@
 ---
 description: Descriptions on how to work with Adobe Forms - Public Cloud Systems
 public: true
-published: false
+published: true
 ---
 > Erweiterung von [[Adobe Forms - On Premise]]
 > Vieles, was On Premise gilt, gilt auch in der Cloud
@@ -12,7 +12,11 @@ published: false
 > Download als Datei, einfügen in neue Datei funktioniert nicht korrekt
 
 ```
+# Printer Queue Auswahl:
 #&&DOWNLOAD_FORM_DATA_XML&&#
+
+# Alternativ: In manchen Apps lässt sich dieser Query Parameter bestimmen
+?DownloadXML=true
 ```
 
 ## Unterschiede zu On-Premise
@@ -27,16 +31,17 @@ published: false
 
 ## Relevante Apps
 
-| App                                                | Beschreibung                                                           |
-| -------------------------------------------------- | ---------------------------------------------------------------------- |
-| Formularvorlagen Pflegen (Manage Form Templates)   | Einstieg in die Formularbearbeitung                                    |
-| Implementierungsaktivitäten (Manage your solution) | Pflege von Formular zu Workflow                                        |
-| Logos Verwalten                                    | Upload von Logos                                                       |
-| Texte Verwalten                                    | Pflege von Textbausteinen                                              |
-| Softwarekollektion Exportieren                     | Transport von Adobe Forms                                              |
-| Bestellungen verwalten, Advanced (ME23N)           | Ausgabe von Bestellungen                                               |
-| Custom Logic (Eigene Logik)                        | Pflege von [[Auslesen von eigener Kundennummer bei Lieferant\|Logik für neue Felder]] |
-| Custom Fields (Eigene Felder)                      | Pflege von eigenen Formularfeldern                                     |
+| App                                                      | Beschreibung                                                                          |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Formularvorlagen Pflegen (Manage Form Templates)         | Einstieg in die Formularbearbeitung                                                   |
+| Implementierungsaktivitäten (Manage your solution)       | Pflege von Formular zu Workflow                                                       |
+| Logos Verwalten                                          | Upload von Logos                                                                      |
+| Texte Verwalten                                          | Pflege von Textbausteinen                                                             |
+| Softwarekollektion Exportieren                           | Transport von Adobe Forms                                                             |
+| Bestellungen verwalten, Advanced (ME23N)                 | Ausgabe von Bestellungen                                                              |
+| Custom Logic (Eigene Logik)                              | Pflege von [[Auslesen von eigener Kundennummer bei Lieferant\|Logik für neue Felder]] |
+| Custom Fields (Eigene Felder)                            | Pflege von eigenen Formularfeldern                                                    |
+| Ausgabeparameterfindung (Output Parameter Determination) | Aktivierung von Formularen für einen Geschäftskontext, z.B. Purchase Order            |
 
 ## Workflow
 1. Kopie eines Standardformulars
@@ -49,8 +54,9 @@ published: false
 5. Auswahl Customizingauftrag in **Softwarekollektion exportieren**, um in Prod zu transportieren
 6. Hier wird in der Ausgabe noch der Standard-Folienmaster angezeigt. Dies kann über **Findungsregeln für Formularvorlagenmaster erstellen** geändert werden
 7. Neue Regel erstellen über eingabe ID, Regelpriorität, Auswahl Masterformularvorlage
-8. Wieder Transport über Customizing
-9. Standard-Master Formularvorlage ist **SOMU_FORM_MASTER_A4** in Ausgabeverwaltung
+8. Dann in App `Ausgabeparameterfindung` das Formular in dem jeweiligen Geschäftskontext aktivieren
+9. Wieder Transport über Customizing
+10. Standard-Master Formularvorlage ist **SOMU_FORM_MASTER_A4** in Ausgabeverwaltung
 
 ## Zusätzliche Felder aus OData Services
 z.B. Ansprechpartner auf Formular
