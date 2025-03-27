@@ -1,5 +1,6 @@
 ---
 title: Home
+description: Welcome to My QBits
 ---
 
 
@@ -9,6 +10,8 @@ Don't know where to start? Here are some pages which I might or might not random
 
 - [[Computer-Science/Hardware/Memory-management]]
 - [[/DevOps/Git/Remote-repositories]]
+
+> [!summary]- Topics
 
 ---
 
