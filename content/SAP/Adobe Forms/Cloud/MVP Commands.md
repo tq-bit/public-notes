@@ -1,3 +1,8 @@
+---
+description: Wichtige Kommandos und Hinweise zur Arbeit mit Adobe Forms
+public: true
+published: true
+---
 ## Print XML
 Download von XML Daten für die Vorschau direkt im Adobe Lifecycle Manager
 
@@ -14,3 +19,6 @@ Download von XML Daten für die Vorschau direkt im Adobe Lifecycle Manager
 # Alternativ: In manchen Apps lässt sich dieser Query Parameter bestimmen
 ?DownloadXML=true
 ```
+
+Anschließend kann die XML als Datenquelle im Adobe LivecycleDesigner eingestellt werden:
+`Datei -> Formulareigenschaften -> Vorschau`

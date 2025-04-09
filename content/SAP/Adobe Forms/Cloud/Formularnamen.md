@@ -1,7 +1,7 @@
 ---
 updated: 2025-03-27
 public: true
-published: false
+published: true
 ---
 ## Bereich Sales & Distribution (SD)
 
