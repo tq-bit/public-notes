@@ -1,12 +1,14 @@
 ---
 description: Add a message to the error log
 public: true
-published:
+published: true
+tags:
+  - integrationsuite
+  - cpi-code
+  - cpi-groovy
 ---
 ## Attach error message into message log
-
 In an exception subprocess, add this Groovy script to add payload to message body so it can be read and downloaded
-
 ```groovy
 import com.sap.gateway.ip.core.customdev.util.Message;
 import java.util.HashMap;

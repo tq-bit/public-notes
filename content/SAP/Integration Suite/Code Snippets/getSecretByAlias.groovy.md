@@ -1,7 +1,11 @@
 ---
 description: A groovy script to retrieve a secret by its name from SAP CPI
 public: true
-published:
+published: true
+tags:
+  - integrationsuite
+  - cpi-code
+  - cpi-groovy
 ---
 This script retrieves a secret named `API_KEY` that has been stored in SAP Integration Suite secure Store `Manage Security->Security Material` and appends it to a header of the exchange message named `X-API-KEY`
 

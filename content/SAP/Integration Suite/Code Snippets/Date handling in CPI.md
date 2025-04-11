@@ -1,7 +1,10 @@
 ---
 description: Code and expressions to work with dates in SAP CPI
 public: true
-published:
+published: true
+tags:
+  - integrationsuite
+  - cpi-xpath
 ---
 ## Get current date in Simple Expression Language
 

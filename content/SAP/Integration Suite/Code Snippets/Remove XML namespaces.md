@@ -1,7 +1,11 @@
 ---
 description: XLST Mapping to remove namespaces from an XML Structure
 public: true
-published:
+published: true
+tags:
+  - integrationsuite
+  - cpi-code
+  - cpi-xsld
 ---
 XSLD-Mapping
 
