@@ -1,3 +1,10 @@
+---
+description: Prompts to use when asking for SAP Public Cloud topics
+tags:
+  - sap
+  - sap-public-cloud
+  - prompt-engineering
+---
 
 ## More technical, less focused on business context
 
