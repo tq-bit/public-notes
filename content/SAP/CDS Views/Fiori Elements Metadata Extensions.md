@@ -1,7 +1,12 @@
 ---
 description: Add metadata to a consumption view
 public: true
-published:
+published: 
+tags:
+  - sap
+  - sap-cds
+  - sap-code
+  - sap-public-cloud
 ---
 ## Example to add a single section with two input elements
 ```ts

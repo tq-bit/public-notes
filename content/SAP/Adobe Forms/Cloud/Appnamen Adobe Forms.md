@@ -2,6 +2,11 @@
 description: Wichtige Apps zur Arbeit mit Formularen
 public: true
 published: true
+tags:
+  - sap
+  - sap-public-cloud
+  - adobe-forms
+  - sap-list
 ---
 ## Zur Bearbeitung von Formularen
 

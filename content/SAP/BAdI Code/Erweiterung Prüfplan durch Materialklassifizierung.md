@@ -2,6 +2,11 @@
 description: Erweiterung von Prüflosen um Toleranzwerte bei WE-Prüfung
 public: true
 published: true
+tags:
+  - sap
+  - sap-code
+  - sap-abap
+  - sap-public-cloud
 ---
 ## Use Case
 Ausgelesen werden **Klassifikationsmerkmale** für ein Material. Diese werden während der Ausführung des BAdI als Toleranzwerte in die jeweilige Ausgabestruktur eingefügt.

@@ -2,6 +2,11 @@
 updated: 2025-03-27
 public: true
 published: true
+tags:
+  - sap-list
+  - sap
+  - sap-public-cloud
+  - adobe-forms
 ---
 ## Bereich Sales & Distribution (SD)
 

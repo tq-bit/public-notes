@@ -2,6 +2,11 @@
 description: Wichtige Kommandos und Hinweise zur Arbeit mit Adobe Forms
 public: true
 published: true
+tags:
+  - sap
+  - sap-public-cloud
+  - sap-on-prem
+  - adobe-forms
 ---
 ## Print XML
 Download von XML Daten für die Vorschau direkt im Adobe Lifecycle Manager

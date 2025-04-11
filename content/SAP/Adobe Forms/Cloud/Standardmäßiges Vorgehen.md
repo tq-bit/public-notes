@@ -2,9 +2,14 @@
 description: Arbeit mit Cloud Formularen
 public: true
 published: true
+tags:
+  - workflow
+  - sap
+  - sap-public-cloud
+  - adobe-forms
 ---
 ## Workflow: Formularerstellung
-Siehe auch [[Appnamen]] & [[Formularnamen]]
+Siehe auch [[Appnamen Adobe Forms]] & [[Formularnamen]]
 
 - [ ] App **Formularvorlagen Pflegen**: Kopie eines Standardformulars
 - [ ] Download Formular, Bearbeitung, Upload

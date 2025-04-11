@@ -2,6 +2,11 @@
 description: Descriptions on how to work with Adobe Forms - On Premise Systems
 public: true
 published: true
+tags:
+  - sap
+  - sap-list
+  - sap-on-prem
+  - adobe-forms
 ---
 ## Voraussetzungen
 - Adobe Lifecycle Manager (von https://me.sap.com)

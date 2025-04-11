@@ -2,6 +2,11 @@
 description: Erweiterung von Bestellformularen um das Feld EIKTO
 public: true
 published: true
+tags:
+  - sap
+  - sap-abap
+  - sap-code
+  - adobe-forms
 ---
 ## Use case
 Auslesen des Feldes **EIKTO**, abgebildet durch Feld **supplieraccountnumber** in CDS View **I_SUPPLIERPURCHASINGORG**.

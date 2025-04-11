@@ -8,9 +8,6 @@ Welcome to my digital garden. You can find a variety of notes here which I did n
 
 Don't know where to start? Here are some pages which I might or might not randomly change as this site grows:
 
-- [[Computer-Science/Hardware/Memory-management]]
-- [[/DevOps/Git/Remote-repositories]]
-
 <h2>SAP Topics</h2>
 <div class="grid">
     <div class="grid__item">
