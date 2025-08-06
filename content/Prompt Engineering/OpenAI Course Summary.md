@@ -19,7 +19,7 @@ The following focuses solely on IT-LLMs.
 - Use delimiters to clearly indicate distinct parts of the input (e.g. '---', ' "some text" ')
 	- Using delimiters can also prevent 'Prompt injection', preventing the model to do something else than it was meant to do
 ### 2. Ask for structured output
-- e.g. ask for JSON structured output
+- e.g. ask for JSON structured output, such as in [[Email Analysis - German]] or 
 ### 3. Check whether conditions are satisfied
 - Ask the model to check whether some premises of the input prompt are satisfied (like an if-else check)
 - E.g. 'You will be provided with a text delimited with triple quotes. [...] If the text does not contain a sequence of instructions, then simply write "No steps provided"'
@@ -35,6 +35,7 @@ The following focuses solely on IT-LLMs.
 - 2. Translate into french
 - 3. List each name in the french summary
 - Create a JSON Object that contains the following keys: original_text, french_text, names
+Example: [[Prompt to create high quality images]]
 
 ### 7. Instruct the model to work out its own solution before rushing to a conclusion
 - Ask the model to figure out its own solution and compare it to an incorrect one
@@ -58,3 +59,4 @@ There are a few prompt guidelines to follow:
 	- ask the model to be more precise for specific target groups and emphasizing on their interest (e.g. 'This description is intended for Furniture Retailers')
 	- ask the model to give a HTML Table as a result
 - Repeat
+- Also, use [[Prompt to improve prompts]]
