@@ -1,9 +1,32 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// Extension of base elements
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('../static/celestial.png') no-repeat center center fixed;
+    background-size: cover;
+    filter: brightness(0.1);            /* adjust the px as needed */
+    z-index: -999;
+}
+
+.page {
+    max-width: 1800px;
+}
+
+.toc, .backlinks {
+    background-color: var(--lightgray);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+
+
+// New elements
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 1rem;
     &__item {
         border-radius: 4px;
@@ -22,3 +45,4 @@
         margin-bottom: 0.5rem;
     }
 }
+
