@@ -13,25 +13,24 @@ Don't know where to start? Here are some pages which I might or might not random
     <div class="grid__item">
         <h3>SAP S4HANA Public Cloud</h3>
         <ul>
-        <li><a href="/SAP Public Cloud/Apps für Integrationsentwicklung">Integrations-Apps</a></li>
-        <li><a href="/SAP Public Cloud/Replikationsmodell einrichten">Replikationsmodelle</a></li>
+        <li><a href="/SAP-Public-Cloud/Apps">Wichtige Apps</a></li>
+        <li><a href="/SAP-Public-Cloud/How-tos/Replikationsmodelle">Replikationsmodelle</a></li>
         </ul>
     </div>
     <div class="grid__item">
         <h3>Adobe Forms</h3>
         <ul>
-        <li><a href="/SAP Adobe Forms/Standardmäßiges-Vorgehen">Standardmäßiges Vorgehen</a></li>
-        <li><a href="/SAP Adobe Forms/Formularnamen">Formularnamen</a></li>
-        <li><a href="/SAP Adobe Forms/MVP-Commands">MVP Commands</a></li>
-        <li><a href="/SAP Adobe Forms//Appnamen">Fiori Apps</a></li>
+        <li><a href="/SAP-Adobe-Forms/Standardmäßiges-Vorgehen">Standardmäßiges Vorgehen</a></li>
+        <li><a href="/SAP-Adobe-Forms/Formularnamen">Formularnamen</a></li>
+        <li><a href="/SAP-Adobe-Forms/MVP-Commands">MVP Commands</a></li>
         </ul>
     </div>
     <div class="grid__item">
         <h3>CPI Code</h3>
         <ul>
-        <li><a href="/SAP Integration-Suite/Code-Snippets/Add-to-Error-Log">Error log (Groovy)</a></li>
-        <li><a href="/SAP Integration-Suite/Code-Snippets/getSecretByAlias.groovy">Get secret param (Groovy)</a></li>
-        <li><a href="/SAP Integration-Suite/Code-Snippets/Remove-XML-namespaces">Remove XML NS (XSLD)</a></li>
+        <li><a href="/SAP-Integration-Suite/Code-Snippets/Add-to-Error-Log">Error log (Groovy)</a></li>
+        <li><a href="/SAP-Integration-Suite/Code-Snippets/getSecretByAlias.groovy">Get secret param (Groovy)</a></li>
+        <li><a href="/SAP-Integration-Suite/Code-Snippets/Remove-XML-namespaces">Remove XML NS (XSLD)</a></li>
         </ul>
     </div>
 </div>

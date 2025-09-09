@@ -8,8 +8,9 @@ tags:
   - sap-public-cloud
   - adobe-forms
 ---
+
 ## Workflow: Formularerstellung
-Siehe auch [[Appnamen Adobe Forms]] & [[Formularnamen]]
+Siehe auch [[Apps#Adobe Forms]] & [[Formularnamen]]
 
 - [ ] App **Formularvorlagen Pflegen**: Kopie eines Standardformulars
 - [ ] Download Formular, Bearbeitung, Upload
@@ -20,7 +21,7 @@ Siehe auch [[Appnamen Adobe Forms]] & [[Formularnamen]]
 - [ ] App **Softwarekollektion exportieren**: Transport aus Customizing in Test / Prod
 
 ## Workflow: Zusätzliche Felder aus OData Service
-Beispiele für BAdI sind zu finden unter `/BAdI Code`, z.B. 
+Beispiele für BAdI sind zu finden unter `/BAdI Code`, z.B.
 - [[Auslesen von eigener Kundennummer bei Lieferant]]
 
 - [ ] App **Benutzerdefinierte Felder**: Neues Feld für den Geschäftskontext des Formulars erstellen und freigeben. Dann Download neues Formular - dort ist Feld nun in Datenstruktur vorhanden
@@ -28,5 +29,6 @@ Beispiele für BAdI sind zu finden unter `/BAdI Code`, z.B.
 
 > [!info] Hinweis zum Debugging
 > Custom Logic als BAdI kann im Eclipse gedebuggt werden. Der BAdI wird als eigene Klasse angelegt mit einem **KU** - Prefix
+
 
 
