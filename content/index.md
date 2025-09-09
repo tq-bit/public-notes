@@ -11,12 +11,19 @@ Don't know where to start? Here are some pages which I might or might not random
 <h2>SAP Topics</h2>
 <div class="grid">
     <div class="grid__item">
+        <h3>SAP S4HANA Public Cloud</h3>
+        <ul>
+        <li><a href="/SAP Public Cloud/Apps für Integrationsentwicklung">Integrations-Apps</a></li>
+        <li><a href="/SAP Public Cloud/Replikationsmodell einrichten">Replikationsmodelle</a></li>
+        </ul>
+    </div>
+    <div class="grid__item">
         <h3>Adobe Forms</h3>
         <ul>
-        <li><a href="/SAP/Adobe-Forms/Cloud/Standardmäßiges-Vorgehen">Standardmäßiges Vorgehen</a></li>
-        <li><a href="/SAP/Adobe-Forms/Cloud/Formularnamen">Formularnamen</a></li>
-        <li><a href="/SAP/Adobe-Forms/Cloud/MVP-Commands">MVP Commands</a></li>
-        <li><a href="/SAP/Adobe-Forms/Cloud/Appnamen">Fiori Apps</a></li>
+        <li><a href="/SAP Adobe Forms/Standardmäßiges-Vorgehen">Standardmäßiges Vorgehen</a></li>
+        <li><a href="/SAP Adobe Forms/Formularnamen">Formularnamen</a></li>
+        <li><a href="/SAP Adobe Forms/MVP-Commands">MVP Commands</a></li>
+        <li><a href="/SAP Adobe Forms//Appnamen">Fiori Apps</a></li>
         </ul>
     </div>
     <div class="grid__item">
