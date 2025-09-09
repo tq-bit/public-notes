@@ -29,9 +29,9 @@ Don't know where to start? Here are some pages which I might or might not random
     <div class="grid__item">
         <h3>CPI Code</h3>
         <ul>
-        <li><a href="/SAP/Integration-Suite/Code-Snippets/Add-to-Error-Log">Error log (Groovy)</a></li>
-        <li><a href="/SAP/Integration-Suite/Code-Snippets/getSecretByAlias.groovy">Get secret param (Groovy)</a></li>
-        <li><a href="/SAP/Integration-Suite/Code-Snippets/Remove-XML-namespaces">Remove XML NS (XSLD)</a></li>
+        <li><a href="/SAP Integration-Suite/Code-Snippets/Add-to-Error-Log">Error log (Groovy)</a></li>
+        <li><a href="/SAP Integration-Suite/Code-Snippets/getSecretByAlias.groovy">Get secret param (Groovy)</a></li>
+        <li><a href="/SAP Integration-Suite/Code-Snippets/Remove-XML-namespaces">Remove XML NS (XSLD)</a></li>
         </ul>
     </div>
 </div>
