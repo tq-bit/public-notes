@@ -58,6 +58,7 @@ ${stylesheet.join("\n\n")}
 }
 
 :root[saved-theme="dark"] {
+  --translucent: rgba(50, 60, 70, 0.12);
   --light: ${theme.colors.darkMode.light};
   --lightgray: ${theme.colors.darkMode.lightgray};
   --gray: ${theme.colors.darkMode.gray};
