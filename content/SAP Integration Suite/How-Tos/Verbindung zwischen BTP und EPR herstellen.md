@@ -37,9 +37,6 @@ tags:
 7. **SAP S4/HANA Cloud Extensibility** auswählen
 8. Pläne nach Bedarf aktivieren, mindestens aber `messaging`
 
-
-
-
 ## Prozess
 Hinweis: Automatisch per KI erstellt
 ```mermaid

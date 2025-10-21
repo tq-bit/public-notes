@@ -9,13 +9,10 @@ published: true
 ---
 ## Voraussetzungen
 - Zugang zum SAP BTP Cockpit und entsprechende Berechtigungen für Service-Instanziierung sowie Zugang zum S/4HANA System.
-- Herstellung einer Verbindung des ERP Systems mit der BTP
-
-## Schrittweise Konfiguration
-Voraussetzungen:
 - [[Verbindung zwischen BTP und EPR herstellen]]
 - [[Deployment von Event Mesh & Cloud Messaging im Subaccount ermöglichen]]
 
+## Schrittweise Konfiguration
 ### Deployment des S4-Cloud Messagings im BTP Subaccount
 1. Im gewünschten BTP Subaccount den Service `s4-hana-cloud-messaging` deployen
 2. Passenden Namespace gemäß Event Mesh Vergabe hinterlegen
@@ -29,8 +26,6 @@ Voraussetzungen:
 5. Create → Event Mesh (Enterprise Messaging) wählen **(Den Service)**
 6. Instanzdetails festlegen mit Instance-Plan Default und eindeutigen Namen vergeben
 7. Konfiguration nach [[Event Mesh Config|diesem Beispiel]] vornehmen
-
-
 
 ## Prozess
 Hinweis: Automatisch per KI erstellt

@@ -48,6 +48,7 @@ businesspartner/v1/BusinessPartner/Changed/v1
 ```
 
 ## Prozess
+Hinweis: Automatisch mit KI erstellt
 
 ```mermaid
 sequenceDiagram
