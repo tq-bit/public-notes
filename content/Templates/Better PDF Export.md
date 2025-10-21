@@ -1,5 +1,8 @@
 ---
 description: Template für das Obsidian Addon 'Better PDF Export'
+tags:
+  - template
+  - pdf
 ---
 ## Header
 

@@ -1,5 +1,8 @@
 ---
 description: Template zur Skizzierung eines Integrationsprozesses
+tags:
+  - template
+  - integrationsuite
 ---
 
 ```markdown

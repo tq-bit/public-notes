@@ -4,6 +4,7 @@ tags:
   - integrationsuite
   - workflow
   - konzept
+  - template
 public: true
 published: true
 ---

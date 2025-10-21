@@ -9,7 +9,7 @@ public: true
 published: true
 ---
 ## Voraussetzungen
-Siehe [[Deployment von Event Mesh und Cloud Messaging]]
+Siehe [[Deployment von Event Mesh & Cloud Messaging]]
 
 ## Schrittweise Konfiguration
 ### Konfiguration des Events in der Public Cloud  
@@ -31,7 +31,7 @@ Mit Queues können bestimmte Topics aus dem Cloud Event Messaging ausgelesen - s
 3.  **Alternativ**: Subscription mit AMPQ-Adapter auf das jeweilige Topic aus der Integraiton Suite
 
 ## Beispiel für eine Event Subscription
-Siehe auch [[Deployment von Event Mesh und Cloud Messaging]] und [[Cloud Enterprise Messaging]] für die Herleitung der Benamung der jeweiligen Subscription
+Siehe auch [[Deployment von Event Mesh & Cloud Messaging]] und [[Cloud Enterprise Messaging]] für die Herleitung der Benamung der jeweiligen Subscription
 
 ```sh
 # Voll Qualifizierter Subscription Name
@@ -50,20 +50,55 @@ businesspartner/v1/BusinessPartner/Changed/v1
 ## Prozess
 
 ```mermaid
-graph LR
-    A[Start: Voraussetzungen prüfen] --> B[Event Mesh und Cloud Messaging deployed]
-    B --> C[Konfiguration des Events in der Public Cloud]
-    C --> D[Relevantes Event auf api.sap.com suchen]
-    D --> E[App öffnen und Event hinzufügen]
-    E --> F[Konfiguration im Event Mesh: Queue]
-    F --> G[Neue Queue erstellen]
-    G --> H[Subskription auf Event über Topic]
-    H --> I[Konfiguration des Webhooks]
-    I --> J{Welche Variante?}
-    J -->|Standard| K[Neuen Webhook mit Quelle Queue erstellen]
-    K --> L[Ziel-HTTP Endpunkt einstellen]
-    L --> M[Optional: Credentials hinterlegen]
-    J -->|Alternativ| N[Subscription mit AMPQ-Adapter auf Topic]
-    M --> O[End: Event Subscription konfiguriert]
-    N --> O
+sequenceDiagram
+    actor Admin as Administrator
+    participant API as api.sap.com
+    participant PC as Public Cloud App
+    participant EM as Event Mesh
+    participant Queue as Queue
+    participant WH as Webhook
+    participant EP as HTTP Endpunkt
+    participant IS as Integration Suite
+
+    rect rgb(250, 220, 200)
+        Note over Admin,PC: Event in Public Cloud aktivieren
+        Admin->>API: Relevantes Event suchen
+        API-->>Admin: Event gefunden
+        Admin->>PC: App öffnen
+        Admin->>PC: Event in App hinzufügen
+        PC-->>Admin: Event aktiviert
+    end
+    
+    rect rgb(200, 220, 250)
+        Note over Admin,Queue: Queue konfigurieren
+        Admin->>EM: Event Mesh öffnen
+        Admin->>Queue: Neue Queue erstellen
+        Admin->>Queue: Subskription auf Topic erstellen
+        Queue->>PC: Subscribe auf Event Topic
+        PC-->>Queue: Subskription aktiv
+    end
+    
+    rect rgb(220, 250, 200)
+        Note over Admin,EP: Webhook konfigurieren
+        Admin->>WH: Neuen Webhook erstellen
+        Admin->>WH: Quelle "Queue" auswählen
+        Admin->>WH: Ziel-HTTP Endpunkt einstellen
+        Admin->>WH: Credentials hinterlegen (optional)
+        WH->>EP: Verbindung zum Endpunkt herstellen
+        EP-->>WH: Webhook konfiguriert
+    end
+    
+    alt Alternative: AMQP-Adapter
+        rect rgb(250, 240, 220)
+            Note over Admin,IS: Alternative Konfiguration
+            Admin->>IS: Integration Suite öffnen
+            Admin->>IS: AMQP-Adapter konfigurieren
+            Admin->>IS: Subscription auf Topic erstellen
+            IS->>Queue: Subscribe auf Topic
+            Queue-->>IS: Subscription aktiv
+        end
+    end
+    
+    Note over PC,IS: Event-Verarbeitung konfiguriert
+
 ```
