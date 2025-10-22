@@ -48,7 +48,7 @@ sequenceDiagram
     Admin->>EA: Edit klicken
     Admin->>SP: Add Service Plans klicken
     
-    rect rgb(200, 220, 250)
+    rect rgb(20, 22, 25)
         Note over Admin,EM: Event Mesh Pläne aktivieren
         Admin->>SP: Event Mesh auswählen
         Admin->>EM: Plan "enterprise-messaging" auswählen
@@ -56,7 +56,7 @@ sequenceDiagram
         EM-->>Admin: Pläne ausgewählt
     end
     
-    rect rgb(220, 250, 200)
+    rect rgb(22, 25, 20)
         Note over Admin,S4: S/4HANA Cloud Extensibility aktivieren
         Admin->>SP: SAP S4/HANA Cloud Extensibility auswählen
         Admin->>S4: Plan "messaging" (mindestens) auswählen

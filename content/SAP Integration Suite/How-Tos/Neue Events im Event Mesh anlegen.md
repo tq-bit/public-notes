@@ -61,7 +61,7 @@ sequenceDiagram
     participant EP as HTTP Endpunkt
     participant IS as Integration Suite
 
-    rect rgb(250, 220, 200)
+    rect rgb(25, 22, 20)
         Note over Admin,PC: Event in Public Cloud aktivieren
         Admin->>API: Relevantes Event suchen
         API-->>Admin: Event gefunden
@@ -70,7 +70,7 @@ sequenceDiagram
         PC-->>Admin: Event aktiviert
     end
     
-    rect rgb(200, 220, 250)
+    rect rgb(20, 22, 25)
         Note over Admin,Queue: Queue konfigurieren
         Admin->>EM: Event Mesh öffnen
         Admin->>Queue: Neue Queue erstellen
@@ -79,7 +79,7 @@ sequenceDiagram
         PC-->>Queue: Subskription aktiv
     end
     
-    rect rgb(220, 250, 200)
+    rect rgb(22, 25, 20)
         Note over Admin,EP: Webhook konfigurieren
         Admin->>WH: Neuen Webhook erstellen
         Admin->>WH: Quelle "Queue" auswählen
@@ -90,7 +90,7 @@ sequenceDiagram
     end
     
     alt Alternative: AMQP-Adapter
-        rect rgb(250, 240, 220)
+        rect rgb(25, 24, 22)
             Note over Admin,IS: Alternative Konfiguration
             Admin->>IS: Integration Suite öffnen
             Admin->>IS: AMQP-Adapter konfigurieren

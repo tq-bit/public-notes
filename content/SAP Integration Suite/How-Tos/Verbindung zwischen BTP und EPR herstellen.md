@@ -54,7 +54,7 @@ sequenceDiagram
     Admin->>BTP: Zugang zum BTP Cockpit
     Admin->>GA: Zu Global Account wechseln
     
-    rect rgb(250, 220, 200)
+    rect rgb(25, 22, 20)
         Note over Admin,S4: System zur System Landscape hinzufügen
         Admin->>SL: Zu Systems navigieren
         Admin->>SL: Add klicken
@@ -70,7 +70,7 @@ sequenceDiagram
         S4-->>Admin: Verbindung erfolgreich
     end
     
-    rect rgb(200, 220, 250)
+    rect rgb(20, 22, 25)
         Note over Admin,EM: Event Mesh Entitlements aktivieren
         Admin->>EA: Zu Entity Assignments navigieren
         Admin->>EA: Subaccount oder Directory auswählen
@@ -81,7 +81,7 @@ sequenceDiagram
         EM-->>Admin: Event Mesh Pläne ausgewählt
     end
     
-    rect rgb(220, 250, 200)
+    rect rgb(22, 25, 20)
         Note over Admin,S4E: S/4HANA Cloud Extensibility aktivieren
         Admin->>SP: SAP S4/HANA Cloud Extensibility auswählen
         Admin->>S4E: Plan "messaging" (mindestens) auswählen

@@ -44,14 +44,14 @@ sequenceDiagram
     Admin->>BTP: Zugang zum BTP Cockpit
     Admin->>Sub: Zu gewünschtem Subaccount wechseln
     
-    rect rgb(200, 220, 250)
+    rect rgb(20, 22, 25)
         Note over Admin,S4CM: Deployment S4-Cloud Messaging
         Admin->>Sub: Service s4-hana-cloud-messaging deployen
         Admin->>S4CM: Passenden Namespace hinterlegen
         S4CM-->>Admin: Service konfiguriert
     end
     
-    rect rgb(220, 250, 200)
+    rect rgb(22, 25, 20)
         Note over Admin,EM: Event Mesh Subscription erstellen
         Admin->>SM: Service Marketplace öffnen
         Admin->>SM: Event Mesh suchen
@@ -59,7 +59,7 @@ sequenceDiagram
         SM-->>Admin: Subscription erstellt
     end
     
-    rect rgb(250, 230, 200)
+    rect rgb(25, 23, 20)
         Note over Admin,IS: Event Mesh Service Instance
         Admin->>IS: Instances and Subscriptions öffnen
         Admin->>IS: Zu Event Mesh Service navigieren

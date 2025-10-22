@@ -10,12 +10,14 @@ published:
 ---
 ## Integration
 
-| **App**                                                                                   | **Beschreibung**                                                                                                  |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| Bereitstellung von Unternehmens-/technischen Ereignissen - Ereignis-Kanal-Binding Pflegen | Apps zur Einrichtung von Eventbasierter Kommunikation und Veröffentliching von Topics                             |
+| **App**                                                                                   | **Beschreibung**                                                                                        |
+| ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Bereitstellung von Unternehmens-/technischen Ereignissen - Ereignis-Kanal-Binding Pflegen | Apps zur Einrichtung von Eventbasierter Kommunikation und Veröffentliching von Topics                   |
 | Nachrichten-Monitoring für Administratoren                                                | Monitor für ausgehende SOAP-Nachrichten, z.B. für [[Replikationsmodelle\|Replikationsmodelle]] und IDOC |
-| Über Replikationsmodell replizieren                                                       | [[Replikationsmodelle\|Replikationen]] auf Basis eines Modells auslösen                                 |
-| Über Objektselektion replizieren                                                          | [[Replikationsmodelle\|Replikationen]] auf Basis eines Objektes auslösen                                |
+| de: Über Replikationsmodell replizieren<br>en: Replicate by Replication Model             | [[Replikationsmodelle\|Replikationen]] auf Basis eines Modells auslösen                                 |
+| de: Über Objektselektion replizieren<br>en: Replicate by Object Selection                 | [[Replikationsmodelle\|Replikationen]] auf Basis eines Objektes auslösen                                |
+| <br>en: Assign Recipients to Users                                                        | Kanäle für ausgehende SOAP-Nachrichten einem oder mehreren Nutzern zuweisen                             |
+| de: Nachrichten Dashboard<br>en: Message Dashboard                                        | [[Monitoring von SOAP-Nachrichten]]                                                                     |
 
 ## Adobe Forms
 

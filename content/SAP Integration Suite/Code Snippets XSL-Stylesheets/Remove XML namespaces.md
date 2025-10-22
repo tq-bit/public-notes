@@ -1,5 +1,5 @@
 ---
-description: XLST Mapping to remove namespaces from an XML Structure
+description: XLST Mapping um XML namespaces aus einem Mapping zu entfernen
 public: true
 published: true
 tags:
@@ -7,8 +7,6 @@ tags:
   - cpi-code
   - cpi-xsld
 ---
-XSLD-Mapping
-
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">

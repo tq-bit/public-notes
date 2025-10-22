@@ -2,8 +2,6 @@
 title: Home
 description: Welcome to My QBits
 ---
-
-
 Welcome to my digital garden. You can find a variety of notes here which I did not want to publish otherwisely on my blog, or just stuff that's been going through my mind.
 
 Don't know where to start? Here are some pages which I might or might not randomly change as this site grows:
