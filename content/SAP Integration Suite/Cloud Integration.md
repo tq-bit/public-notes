@@ -48,7 +48,7 @@ Message monitor tracing is especially relevant to debugging flows. Trace logging
 > - Use the log-level **trace** to see messages and their contents
 > - Use message **simulation** to start messages with a defined payload
 > - Combine the two to test and troubleshoot iFlows
-> - Use [[Add to Error Log|Groovy scripts]] to log payloads or message information
+> - Use [[Add to message log|Groovy scripts]] to log payloads or message information
 
 Another method of reading the logs of a tenant is by using the [Cloud API](https://api.sap.com/api/MessageProcessingLogs/overview). It is generally considered good practice to deploy and monitor flows procedures several times.
 

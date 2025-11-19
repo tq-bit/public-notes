@@ -5,7 +5,7 @@ tags:
   - cpi-code
   - cpi-javascript
 ---
-See also [[Add to Error Log]] for a Groovy implementation
+See also [[Add to message log]] for a Groovy implementation
 
 ```javascript
 importClass(com.sap.gateway.ip.core.customdev.util.Message);

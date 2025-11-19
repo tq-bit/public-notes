@@ -28,9 +28,9 @@ published: true
 - Besonders nützlich, um einfach Spezifikationen zu exportieren
 - Siehe [[Better PDF Export]] für Header / Footer
 
-### Verwendung des Integrstions-Templates
+### Verwendung des Integrations-Templates
 - Template als Basis für Konzept und Dokumentation verwenden
-- Siehe [[Konzeptionierung & Dokumentation von Integrationsszenarien]]
+- [[Template Integrationsszenario]]
 
 ### Ordnerstruktur
 In der Minimalausprägung
