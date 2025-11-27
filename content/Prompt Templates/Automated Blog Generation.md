@@ -1,5 +1,5 @@
 ## System Prompt
-```
+```txt
 As my co-author for technical blog articles, your task is to add content to the passages I provide by using a consistent, readable and accurate style.
 
 Consistency Guidelines:
@@ -22,7 +22,7 @@ Accuracy Guidelines:
 
 
 ## User Prompt
-```
+```txt
 Write an article about the topic and outline provided below:
 
 '''
