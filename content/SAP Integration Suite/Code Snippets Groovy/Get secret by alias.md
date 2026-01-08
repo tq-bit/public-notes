@@ -7,7 +7,8 @@ tags:
   - cpi-code
   - cpi-groovy
 ---
-This script retrieves all secrets from the secret store if there is one or multiple message properties prefixed with `AS_`. e.g. AS_Shopify_Token generates a new property named `p_Shopify_Token` that includes the value from the secret store.
+Dieses Skript ruft alle Secrets aus dem Secret Store ab, wenn eine oder mehrere Message Properties mit dem Präfix `AS_` vorhanden sind.  
+Beispiel: `AS_Shopify_Token` erzeugt eine neue Property mit dem Namen `p_Shopify_Token`, die den Wert aus dem Secret Store enthält.
 
 ```groovy
 import com.sap.gateway.ip.core.customdev.util.Message;

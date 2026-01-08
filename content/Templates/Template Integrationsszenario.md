@@ -4,6 +4,7 @@ tags:
   - template
   - integrationsuite
 ---
+Siehe auch [[Mermaid Templates]] für Beispiel zum Sequenzdiagramm & Beispiel für Architekturdiagramm, sofern notwendig. 
 
 ```markdown
 ---

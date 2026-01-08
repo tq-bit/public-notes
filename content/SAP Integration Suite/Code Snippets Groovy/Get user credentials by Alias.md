@@ -1,5 +1,5 @@
 ---
-description: A groovy script to retrieve a secret by its name from SAP CPI
+description: A groovy script to retrieve user credentials by their ALIAS-name from SAP CPI
 public: true
 published: true
 tags:
@@ -7,7 +7,7 @@ tags:
   - cpi-code
   - cpi-groovy
 ---
-This script retrieves all secrets from the secret store if there is one or multiple message properties prefixed with `AS_`. e.g. AS_Shopify_Token generates a new property named `p_Shopify_Token` that includes the value from the secret store.
+Dieses Skript ruft ein einzelnes User-Credential, inklusive Username und Passwort, aus dem Secret Store ab. Dieses wird jeweils unter den Message Properties `p_Username` und `p_Password` als Wert hinterlegt.
 
 ```groovy
 import com.sap.gateway.ip.core.customdev.util.Message

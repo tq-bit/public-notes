@@ -4,6 +4,7 @@ tags:
   - integrationsuite
   - cpi-code
   - cpi-javascript
+  - sharepoint-integration
 public: true
 published: true
 ---
