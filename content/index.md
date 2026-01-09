@@ -16,19 +16,20 @@ Don't know where to start? Here are some pages which I might or might not random
         </ul>
     </div>
     <div class="grid__item">
-        <h3>Adobe Forms</h3>
+        <h3>Integration Suite - Methodik</h3>
         <ul>
-        <li><a href="/SAP-Adobe-Forms/Standardmäßiges-Vorgehen">Standardmäßiges Vorgehen</a></li>
-        <li><a href="/SAP-Adobe-Forms/Formularnamen">Formularnamen</a></li>
-        <li><a href="/SAP-Adobe-Forms/MVP-Commands">MVP Commands</a></li>
+        <li><a href="/SAP-Integration-Suite/How-Tos/">How-Tos</a></li>
+        <li><a href="/Templates/Template-Integrationsszenario">Template Integrationsanforderung</a></li>
+        <li><a href="/Templates/Mermaid-Templates">Template Mermaid Charts</a></li>
         </ul>
     </div>
     <div class="grid__item">
-        <h3>CPI Code</h3>
+        <h3>Integration Suite - Code</h3>
         <ul>
-        <li><a href="/SAP-Integration-Suite/Code-Snippets/Add-to-Error-Log">Error log (Groovy)</a></li>
-        <li><a href="/SAP-Integration-Suite/Code-Snippets/getSecretByAlias.groovy">Get secret param (Groovy)</a></li>
-        <li><a href="/SAP-Integration-Suite/Code-Snippets/Remove-XML-namespaces">Remove XML NS (XSLD)</a></li>
+        <li><a href="/SAP-Integration-Suite/Code-Snippets-Groovy/">Groovy Scripts</a></li>
+        <li><a href="/SAP-Integration-Suite/Code-Snippets-Javascript/">Javascript Scripts</a></li>
+        <li><a href="/SAP-Integration-Suite/Code-Snippets-XSL-Stylesheets/">XSL Stylesheets</a></li>
+        <li><a href="/SAP-Integration-Suite/Code-Snippets-Allgemein/">Code Snippets allgemein</a></li>
         </ul>
     </div>
 </div>
