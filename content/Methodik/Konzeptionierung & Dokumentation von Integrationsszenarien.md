@@ -32,6 +32,12 @@ published: true
 - Template als Basis für Konzept und Dokumentation verwenden
 - [[Template Integrationsszenario]]
 
+### Verwendung der Integrations-Dokumentation
+- Template als Basis für Dokumentation verwenden - basiert auf [[Vorlage Integrationsdokumentation]]
+### Verwendung von Quality Gates
+- Template als Basis für Abnahme von Kunden verwenden
+- [[Template Quality Gate]]
+
 ### Ordnerstruktur
 In der Minimalausprägung
 

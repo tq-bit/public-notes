@@ -23,8 +23,7 @@ Ohne Freigabe des Quality Gates können die oben genannten Integrationsartefakte
 ```
 
 ## 2. Checkliste
-
-Notwendige Punkte
+**Notwendige Punkte**
 1. Abnahme durch Key-User
 2. Verantwortlicher Entwickler
 3. Version des iFlow
@@ -34,7 +33,7 @@ Zusätzlich können weitere Punkte, die Teil der Cutovertätigkeiten waren, hier
 5. Aktivierung COM-Vereinbarungen
 6. Pflege Credentials
 7. Versendung von Endpunkten & Credentials an Dienstleister
-## 3. Links
 
-1. Dokumentation in der Integration Suite
+## 3. Links
+1. Link zur Dokumentation
 2. Links zu Tickets, User Stories, externen Ressourcen
