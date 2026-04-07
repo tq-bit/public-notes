@@ -7,10 +7,13 @@ tags:
   - btp
   - api-management
 ---
-Dieses Beispiel gilt für folgendes Szenario: 
+Dieses Beispiel gilt für folgendes Szenario:
 - Name KVM: `APIKey`
 - Auszulesener Key: `APIKey`
 - Wert im Kontext, der beschrieben wird: `private.expected.apikey`
+
+> Hinweis: Falls im KVM ein API-Key gesetz wird, sollte dieser folgendes Format haben:
+> `sk_7wYdKpH2nQvR3x9La4Cb8Mf0TuZ6Ej1Sg5Vr2Xc`
 
 ```xml
 <KeyValueMapOperations mapIdentifier="APIKey"
