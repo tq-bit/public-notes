@@ -1,5 +1,5 @@
 ---
-description: Template für die Erstellung eines Quality Gates
+description: Allgemeine Coding Regeln
 tags:
   - ai
   - windsurf

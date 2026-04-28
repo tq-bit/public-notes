@@ -1,5 +1,5 @@
 ---
-description: Template für die Erstellung eines Quality Gates
+description: Workflow für eine Code review mit parametrisierbarer Anzahl an Git Commits
 tags:
   - ai
   - windsurf
