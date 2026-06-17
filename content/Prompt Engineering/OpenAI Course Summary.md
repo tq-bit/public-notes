@@ -19,7 +19,7 @@ The following focuses solely on IT-LLMs.
 - Use delimiters to clearly indicate distinct parts of the input (e.g. '---', ' "some text" ')
 	- Using delimiters can also prevent 'Prompt injection', preventing the model to do something else than it was meant to do
 ### 2. Ask for structured output
-- e.g. ask for JSON structured output, such as in [[Email Analysis - German]] or 
+- e.g. ask for JSON structured output, such as in [[LEGACY - Prompt for Email Analysis - German]] or 
 ### 3. Check whether conditions are satisfied
 - Ask the model to check whether some premises of the input prompt are satisfied (like an if-else check)
 - E.g. 'You will be provided with a text delimited with triple quotes. [...] If the text does not contain a sequence of instructions, then simply write "No steps provided"'

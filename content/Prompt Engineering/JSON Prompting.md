@@ -6,7 +6,7 @@ tags:
   - development
   - ai
 ---
-JSON is slightly better for reusable and automated [[Principles of Prompting|prompting]]. This template includes a simple structure to get started with, which can be expanded further depending on the respective use case. The [[Assess whether input is considered dangerous]] prompt includes a JSON example with additional properties.
+JSON is slightly better for reusable and automated [[Principles of Prompting|prompting]]. This template includes a simple structure to get started with, which can be expanded further depending on the respective use case. The [[LEGACY - Prompt to assess whether input is considered dangerous]] prompt includes a JSON example with additional properties.
 
 ## Empty template
 
