@@ -9,6 +9,8 @@ tags:
 ---
 Das folgende JSON kann verwendet werden, um einen Services vom Typ `s4-hana-cloud` -> `messaging` in der SAP BTP anzulegen.
 
+> Hinweis: Es gibt einen einfacheren Weg, direkt den Event Mesh in der Integration Suite anzulegen. CEM sollte nicht mehr separat konfiguriert werden!
+
 > [!important] Voraussetzungen 
 > - Verbindung zwischen BTP und S4H über System Landscape im GA herstellen
 > - Vor deployment **systemName** anpassen

@@ -8,7 +8,7 @@ tags:
   - btp
   - cloudfoundry
 ---
- Perfekt im Zusammenspiel mit [[Cloud Enterprise Messaging]]
+> Diese Konfiguration kann in einfacher Form auch für den Integration Suite internen Event Mesh verwendet werden.
 
 ```json
 {
