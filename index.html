@@ -1,0 +1,62 @@
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%; border-collapse:separate;">
+  <tr>
+    <td style="padding:16px 18px; background:#f7f8fb; border-radius:12px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+        <tr>
+          <td colspan="2" style="padding:0 0 12px 0; font-family:Arial,sans-serif; font-size:18px; line-height:24px; font-weight:bold; color:#1f2937;">
+            Wetter heute in Berenbrock
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" style="width:72px; padding:0 14px 0 0; font-family:Arial,sans-serif; color:#111827;">
+            <img
+              src="{{
+                ({
+                  Clear: 'https://openweathermap.org/img/wn/01d@2x.png',
+                  Clouds: 'https://openweathermap.org/img/wn/02d@2x.png',
+                  Rain: 'https://openweathermap.org/img/wn/10d@2x.png',
+                  Drizzle: 'https://openweathermap.org/img/wn/09d@2x.png',
+                  Thunderstorm: 'https://openweathermap.org/img/wn/11d@2x.png',
+                  Snow: 'https://openweathermap.org/img/wn/13d@2x.png',
+                  Mist: 'https://openweathermap.org/img/wn/50d@2x.png',
+                  Smoke: 'https://openweathermap.org/img/wn/50d@2x.png',
+                  Haze: 'https://openweathermap.org/img/wn/50d@2x.png',
+                  Dust: 'https://openweathermap.org/img/wn/50d@2x.png',
+                  Fog: 'https://openweathermap.org/img/wn/50d@2x.png',
+                  Sand: 'https://openweathermap.org/img/wn/50d@2x.png',
+                  Ash: 'https://openweathermap.org/img/wn/50d@2x.png',
+                  Squall: 'https://openweathermap.org/img/wn/50d@2x.png',
+                  Tornado: 'https://openweathermap.org/img/wn/50d@2x.png'
+                })[($json.list?.[0]?.weather?.[0]?.main || $json.weather?.[0]?.main)] ||
+                `https://openweathermap.org/img/wn/${$json.list?.[0]?.weather?.[0]?.icon || $json.weather?.[0]?.icon}@2x.png`
+              }}"
+              alt="{{ $json.list?.[0]?.weather?.[0]?.main || $json.weather?.[0]?.main }}"
+              width="40"
+              height="40"
+              style="display:block;"
+            >
+            <div style="padding-top:6px; font-size:18px; line-height:22px; font-weight:bold;">
+              {{
+                (() => {
+                  const entries = ($json.list || []).slice(0, 8);
+                  const temps = entries.map(e => Number(e.main?.temp)).filter(t => !isNaN(t));
+                  return temps.length
+                    ? (temps.reduce((sum, t) => sum + t, 0) / temps.length).toFixed(1)
+                    : Math.round($json.main?.temp || 0);
+                })()
+              }}&deg;C
+            </div>
+          </td>
+          <td valign="top" style="font-family:Arial,sans-serif; color:#111827;">
+            <div style="font-size:16px; line-height:22px; font-weight:bold;">
+              Vorhersage für {{ $json.city?.name || $json.name }}
+            </div>
+            <div style="padding-top:4px; font-size:14px; line-height:20px; color:#4b5563;">
+              {{ $json.list?.[0]?.weather?.[0]?.description || $json.weather?.[0]?.description }}
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
