@@ -1,3 +1,15 @@
+// ---------------------------------------------------------------------------
+// qbit design system - Quartz syntax highlighting
+//
+// No qbit changes needed here: the token colors are Shiki themes configured in
+// quartz.config.ts (syntaxHighlighting.theme) and emitted as --shiki-light /
+// --shiki-dark. The [saved-theme] switch matches the qbit dark-default theme
+// wiring in variables.scss. Pick a dark theme that suits the qbit palette,
+// e.g. "github-dark-default", paired with a light one for the light theme.
+// Code block chrome (glass surface, line numbers, highlights) lives in
+// base.scss.
+// ---------------------------------------------------------------------------
+
 code[data-theme*=" "] {
   color: var(--shiki-light);
   background-color: var(--shiki-light-bg);

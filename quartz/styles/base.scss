@@ -2,30 +2,80 @@
 @use "./syntax.scss";
 @use "./callouts.scss";
 
+// ---------------------------------------------------------------------------
+// qbit design system - Quartz base styles
+// Dark-first glass theme: Inter body, Space Grotesk headings, gradient
+// accents, glass cards, no background image (the animated moving-lines
+// background is mounted by plugins/emitters/FlowBackground.ts).
+// ---------------------------------------------------------------------------
+
 html {
   scroll-behavior: smooth;
   text-size-adjust: none;
   overflow-x: hidden;
   width: 100vw;
+
+  // Deliberately NO "color-scheme" property (qbit gotcha): Chrome paints
+  // same-origin srcdoc iframes with an opaque white canvas when the parent
+  // declares a color scheme.
 }
 
 body,
 section {
   margin: 0;
   box-sizing: border-box;
-  background-color: var(--light);
-  font-family: var(--bodyFont);
-  color: var(--darkgray);
+}
+
+body {
+  // qbit glow body background: fixed radial color fields over the base color.
+  // The FlowBackground canvas sits on top of this at z-index -999.
+  background:
+    radial-gradient(1100px 700px at 85% -10%, var(--color-glow-primary), transparent 60%),
+    radial-gradient(900px 600px at -10% 110%, var(--color-glow-secondary), transparent 60%),
+    rgb(var(--color-bg));
+  background-attachment: fixed;
+  font-family: var(--font-body);
+  font-size: $text-md;
+  color: rgb(var(--color-text));
+  fill: rgb(var(--color-text));
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .text-highlight {
-  background-color: var(--textHighlight);
+  background-color: rgba(var(--color-primary), 0.25);
   padding: 0 0.1rem;
-  border-radius: 5px;
+  border-radius: $border-radius-xs;
 }
+
 ::selection {
-  background: color-mix(in srgb, var(--tertiary) 60%, rgba(255, 255, 255, 0));
-  color: var(--darkgray);
+  background: var(--color-selection);
+  color: rgb(var(--color-on-accent));
+  -webkit-text-fill-color: rgb(var(--color-on-accent));
+}
+
+// qbit scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-bg));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-border-muted));
+  border-radius: $border-radius-round;
+  border: 2px solid rgb(var(--color-bg));
+
+  &:hover {
+    background: rgb(var(--color-border-strong));
+  }
+}
+
+// qbit focus rings (focus-visible only, never :focus)
+:focus-visible {
+  @include focus-outline;
 }
 
 p,
@@ -39,8 +89,8 @@ ol,
 ul,
 .katex,
 .math {
-  color: var(--darkgray);
-  fill: var(--darkgray);
+  color: rgb(var(--color-text));
+  fill: rgb(var(--color-text));
   hyphens: auto;
 }
 
@@ -68,27 +118,35 @@ strong {
 }
 
 a {
+  @include underline-gradient;
   font-weight: $semiBoldWeight;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  color: var(--secondary);
-
-  &:hover {
-    color: var(--tertiary) !important;
-  }
 
   &.internal {
     text-decoration: none;
-    background-color: var(--highlight);
-    padding: 0 0.1rem;
-    border-radius: 5px;
+    background-color: rgba(var(--color-primary), 0.12);
+    border: 1px solid rgba(var(--color-primary), 0.16);
+    padding: 0 0.25rem;
+    border-radius: $border-radius-xs;
     line-height: 1.4rem;
+    transition: background-color $animation-speed-fast ease-out, border-color $animation-speed-fast ease-out;
+
+    &::after {
+      // wikilinks are pills, not underlines
+      display: none;
+    }
+
+    &:hover {
+      background-color: rgba(var(--color-primary), 0.2);
+      color: rgb(var(--color-text));
+    }
 
     &:has(> img) {
-      background-color: none;
+      background-color: transparent;
+      border: none;
       border-radius: 0;
       padding: 0;
     }
+
     &.tag-link {
       &::before {
         content: "#";
@@ -101,9 +159,14 @@ a {
     margin: 0 0.15em;
 
     > path {
-      fill: var(--dark);
+      fill: rgb(var(--color-text));
     }
   }
+}
+
+// qbit tag pills (tags rendered at the bottom of a page)
+ul.tags > li > a {
+  @include tag-pill;
 }
 
 .desktop-only {
@@ -125,7 +188,7 @@ a {
   margin: 0 auto;
   & article {
     & > h1 {
-      font-size: 2rem;
+      font-size: $text-max;
     }
 
     & li:has(> input[type="checkbox"]) {
@@ -135,8 +198,8 @@ a {
 
     & li:has(> input[type="checkbox"]:checked) {
       text-decoration: line-through;
-      text-decoration-color: var(--gray);
-      color: var(--gray);
+      text-decoration-color: rgb(var(--color-border-strong));
+      color: rgb(var(--color-text-muted));
     }
 
     & li > * {
@@ -144,8 +207,9 @@ a {
       margin-bottom: 0;
     }
 
+    // qbit signature emphasis: gradient text
     p > strong {
-      color: var(--dark);
+      @include gradient-text;
     }
   }
 
@@ -192,6 +256,7 @@ a {
       z-index: 1;
       grid-area: grid-sidebar-left;
       flex-direction: column;
+      // transparent panel: the moving-lines background shows through
       @media all and ($mobile) {
         gap: 0;
         align-items: center;
@@ -208,6 +273,7 @@ a {
       grid-area: grid-sidebar-right;
       margin-right: 0;
       flex-direction: column;
+      // transparent panel: the moving-lines background shows through
       @media all and ($mobile) {
         margin-left: inherit;
         margin-right: inherit;
@@ -270,15 +336,15 @@ a {
 
 .footnotes {
   margin-top: 2rem;
-  border-top: 1px solid var(--lightgray);
+  border-top: 1px solid rgb(var(--color-border-muted));
 }
 
 input[type="checkbox"] {
   transform: translateY(2px);
-  color: var(--secondary);
-  border: 1px solid var(--lightgray);
-  border-radius: 3px;
-  background-color: var(--light);
+  color: rgb(var(--color-primary));
+  border: 1px solid rgb(var(--color-border-strong));
+  border-radius: $border-radius-xs;
+  background-color: rgba(var(--color-surface-raised), 0.6);
   position: relative;
   margin-inline-end: 0.2rem;
   margin-inline-start: -1.4rem;
@@ -287,8 +353,9 @@ input[type="checkbox"] {
   height: 16px;
 
   &:checked {
-    border-color: var(--secondary);
-    background-color: var(--secondary);
+    border-color: rgb(var(--color-primary));
+    // qbit gradient CTA fill
+    background: linear-gradient(135deg, rgb(var(--color-primary)) 0%, rgb(var(--color-secondary)) 100%);
 
     &::after {
       content: "";
@@ -298,18 +365,36 @@ input[type="checkbox"] {
       width: 4px;
       height: 8px;
       display: block;
-      border: solid var(--light);
+      border: solid rgb(var(--color-on-accent));
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
     }
   }
 }
 
+// qbit blockquote: glass surface, gradient edge, gradient quote mark
 blockquote {
-  margin: 1rem 0;
-  border-left: 3px solid var(--secondary);
-  padding-left: 1rem;
-  transition: border-color 0.2s ease;
+  @include card-surface;
+
+  position: relative;
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  border-left: 3px solid transparent;
+  border-image: linear-gradient(180deg, rgb(var(--color-primary)), rgb(var(--color-secondary))) 1;
+  margin: 2rem 0;
+  font-size: $text-lg;
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -0.75rem;
+    left: 0.5rem;
+    font-size: 4rem;
+    opacity: 0.3;
+    background: linear-gradient(45deg, rgb(var(--color-primary)), rgb(var(--color-secondary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
 
 h1,
@@ -319,13 +404,15 @@ h4,
 h5,
 h6,
 thead {
-  font-family: var(--headerFont);
-  color: var(--dark);
-  font-weight: revert;
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: rgb(var(--color-text));
+  font-weight: 700;
   margin-bottom: 0;
 
   article > & > a[role="anchor"] {
-    color: var(--dark);
+    color: rgb(var(--color-text));
     background-color: transparent;
   }
 }
@@ -339,7 +426,7 @@ h6 {
   &[id] > a[href^="#"] {
     margin: 0 0.5rem;
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transition: opacity $animation-speed-fast ease;
     transform: translateY(-0.1rem);
     font-family: var(--codeFont);
     user-select: none;
@@ -350,48 +437,59 @@ h6 {
   }
 }
 
-// typography improvements
+// typography - qbit text scale
 h1 {
-  font-size: 1.75rem;
+  font-size: $text-max;
   margin-top: 2.25rem;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 1.4rem;
+  font-size: $text-2xl;
   margin-top: 1.9rem;
   margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.12rem;
+  font-size: $text-xl;
   margin-top: 1.62rem;
   margin-bottom: 1rem;
 }
 
-h4,
-h5,
-h6 {
-  font-size: 1rem;
+h4 {
+  font-size: $text-lg;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
+}
+
+h5,
+h6 {
+  font-size: $text-md;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h6 {
+  font-size: $text-xs;
 }
 
 figure[data-rehype-pretty-code-figure] {
   margin: 0;
   position: relative;
   line-height: 1.6rem;
-  position: relative;
 
   & > [data-rehype-pretty-code-title] {
     font-family: var(--codeFont);
     font-size: 0.9rem;
     padding: 0.1rem 0.5rem;
-    border: 1px solid var(--lightgray);
+    border: 1px solid rgba(var(--color-primary), 0.16);
     width: max-content;
-    border-radius: 5px;
+    border-radius: $border-radius-xs;
     margin-bottom: -0.5rem;
-    color: var(--darkgray);
+    color: rgb(var(--color-text-muted));
+    background: rgba(var(--color-surface), 0.6);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
 
   & > pre {
@@ -399,22 +497,31 @@ figure[data-rehype-pretty-code-figure] {
   }
 }
 
+// qbit glass code blocks
 pre {
   font-family: var(--codeFont);
   padding: 0 0.5rem;
-  border-radius: 5px;
+  border-radius: $border-radius-sm;
   overflow-x: auto;
-  border: 1px solid var(--lightgray);
+  border: 1px solid rgba(var(--color-primary), 0.16);
+  background: rgba(var(--color-surface), 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   position: relative;
 
   &:has(> code.mermaid) {
     border: none;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   & > code {
     background: none;
+    border: none;
     padding: 0;
     font-size: 0.85rem;
+    color: rgb(var(--color-text));
     counter-reset: line;
     counter-increment: line 0;
     display: grid;
@@ -422,8 +529,8 @@ pre {
     overflow-x: auto;
 
     & [data-highlighted-chars] {
-      background-color: var(--highlight);
-      border-radius: 5px;
+      background-color: rgba(var(--color-primary), 0.16);
+      border-radius: $border-radius-xs;
     }
 
     & > [data-line] {
@@ -432,8 +539,8 @@ pre {
       border-left: 3px solid transparent;
 
       &[data-highlighted-line] {
-        background-color: var(--highlight);
-        border-left: 3px solid var(--secondary);
+        background-color: rgba(var(--color-primary), 0.12);
+        border-left: 3px solid rgb(var(--color-primary));
       }
 
       &::before {
@@ -443,7 +550,7 @@ pre {
         margin-right: 1rem;
         display: inline-block;
         text-align: right;
-        color: rgba(115, 138, 148, 0.6);
+        color: rgba(var(--color-text-muted), 0.6);
       }
     }
 
@@ -457,19 +564,21 @@ pre {
   }
 }
 
+// inline code: primary-tinted pill
 code {
   font-size: 0.9em;
-  color: var(--dark);
+  color: rgb(var(--color-text));
   font-family: var(--codeFont);
-  border-radius: 5px;
-  padding: 0.1rem 0.2rem;
-  background: var(--lightgray);
+  border-radius: $border-radius-xs;
+  padding: 0.1rem 0.3rem;
+  background: rgba(var(--color-primary), 0.12);
+  border: 1px solid rgba(var(--color-primary), 0.16);
 }
 
 tbody,
 li,
 p {
-  line-height: 1.6rem;
+  line-height: $line-height-body;
 }
 
 .table-container {
@@ -494,7 +603,7 @@ p {
 th {
   text-align: left;
   padding: 0.4rem 0.7rem;
-  border-bottom: 2px solid var(--gray);
+  border-bottom: 1px solid rgb(var(--color-border-strong));
 }
 
 td {
@@ -502,7 +611,7 @@ td {
 }
 
 tr {
-  border-bottom: 1px solid var(--lightgray);
+  border-bottom: 1px solid rgb(var(--color-border-muted));
   &:last-child {
     border-bottom: none;
   }
@@ -510,8 +619,10 @@ tr {
 
 img {
   max-width: 100%;
-  border-radius: 5px;
+  border-radius: $border-radius-sm;
   margin: 1rem 0;
+  border: 1px solid rgba(var(--color-primary), 0.16);
+  box-shadow: 0 10px 40px var(--color-shadow);
 }
 
 p > img + em {
@@ -521,16 +632,16 @@ p > img + em {
 
 hr {
   width: 100%;
-  margin: 2rem auto;
+  margin: 2.5rem auto;
   height: 1px;
   border: none;
-  background-color: var(--lightgray);
+  background-color: rgb(var(--color-border-muted));
 }
 
 audio,
 video {
   width: 100%;
-  border-radius: 5px;
+  border-radius: $border-radius-sm;
 }
 
 .spacer {
@@ -555,18 +666,6 @@ ol.overflow {
   & > li:last-of-type {
     margin-bottom: 30px;
   }
-  /*&:after {
-    pointer-events: none;
-    content: "";
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    background: linear-gradient(transparent 0px, var(--light));
-  }*/
 }
 
 .transclude {
@@ -585,5 +684,5 @@ iframe.pdf {
   aspect-ratio: 16 / 9;
   height: 100%;
   width: 100%;
-  border-radius: 5px;
+  border-radius: $border-radius-sm;
 }

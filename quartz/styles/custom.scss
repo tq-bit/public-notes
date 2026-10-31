@@ -1,48 +1,105 @@
+@use "./variables.scss" as *;
 @use "./base.scss";
 
-// Extension of base elements
-body::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: url('../static/celestial.png') no-repeat center center fixed;
-    background-size: cover;
-    filter: brightness(0.1);            /* adjust the px as needed */
-    z-index: -999;
-}
+// ---------------------------------------------------------------------------
+// qbit design system - Quartz custom entrypoint
+//
+// The old `body::before` celestial.png background image is intentionally
+// REMOVED:
+//   - the static glow fields live in base.scss (body background)
+//   - the animated moving-lines background is mounted at runtime by the
+//     FlowBackground emitter plugin (quartz/plugins/emitters/FlowBackground.ts)
+//     and styled by the .flow block below
+//
+// Quartz compiles this file as the stylesheet entrypoint
+// (quartz/plugins/emitters/componentResources.ts imports styles/custom.scss),
+// so keep the `@use "./base.scss"` chain intact.
+// ---------------------------------------------------------------------------
 
 .page {
-    max-width: 1800px;
+  max-width: 1800px;
 }
 
-.toc, .backlinks {
-    background-color: var(--translucent);
-    padding: 1rem;
-    border-radius: 4px;
+.toc,
+.backlinks {
+  @include card-surface;
+  padding: 1rem;
 }
 
-
-
-// New elements
+// qbit grid cards
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 1rem;
-    &__item {
-        border-radius: 4px;
-        background-color: var(--highlight);
-        padding: 1rem;
-    }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
 
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
+  &__item {
+    @include card-surface;
+    @include card-hover-glow;
+    padding: 1rem;
+  }
 
-    h3 {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-    }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 }
 
+// ---------------------------------------------------------------------------
+// Moving-lines background container (qbit 07-flow-background.scss)
+// Mounted by plugins/emitters/FlowBackground.ts:
+//   <div class="flow" aria-hidden="true">
+//     <canvas class="flow__canvas"></canvas>
+//     <div class="flow__glow flow__glow--primary"></div>
+//     <div class="flow__glow flow__glow--secondary"></div>
+//   </div>
+// ---------------------------------------------------------------------------
+
+.flow {
+  position: fixed;
+  inset: 0;
+  z-index: -999;
+  overflow: hidden;
+  pointer-events: none;
+
+  &__canvas {
+    position: absolute;
+    inset: 0;
+    opacity: 0.9;
+  }
+
+  // Blurred color fields behind the canvas
+  &__glow {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+
+    &--primary {
+      width: 55vw;
+      height: 55vw;
+      top: -25vw;
+      right: -18vw;
+      background: var(--color-glow-primary);
+    }
+
+    &--secondary {
+      width: 45vw;
+      height: 45vw;
+      bottom: -20vw;
+      left: -15vw;
+      background: var(--color-glow-secondary);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
